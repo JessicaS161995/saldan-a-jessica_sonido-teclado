@@ -8,52 +8,20 @@
 
 
   
-let sonidomar;
+
 let sonidos = [];
 
 function preload() {
-
-  for (let i = 0; i < 7; i++) {
+	for (let i = 0; i < 7; i++) {
 		sonidos[i] = loadSound('sonido/' + i + '.mp3');
 	}
- 
 }
 function setup() {
-  let cvn = createCanvas(windowWidth, windowheight);
+	let cnv = createCanvas(windowWidth, windowHeight);
   cnv.mouseClicked(presionado);
 }
 
-function presionar() {
-  let r = Math.floor(random(7));
-	circle(mouseX, mouseY, 20);
-
-	switch (r) {
-		case 0:
-			sonidos[0].play();
-			break;
-		case 1:
-			sonidos[1].play();
-			break;
-		case 2:
-			sonidos[2].play();
-			break;
-		case 3:
-			sonidos[3].play();
-			break;
-		case 4:
-			sonidos[4].play();
-			break;
-		case 5:
-			sonidos[5].play();
-			break;
-		case 6:
-			sonidos[6].play();
-			break;
-	}
-}
-  
-function draw() {}
-function mouseDragged() {
+function presionado() {
 	let r = Math.floor(random(7));
 	circle(mouseX, mouseY, 20);
 
@@ -82,27 +50,58 @@ function mouseDragged() {
 	}
 }
 
-function keyPressed() {
-	switch (key) {
-		case 'a':
+function draw() {}
+function mouseDragged() {
+	let r = Math.floor(random(7));
+  circle(mouseX, mouseY, 20);
+  fill(19, 30, 100);
+
+	switch (r) {
+		case 0:
 			sonidos[0].play();
 			break;
-		case 's':
+		case 1:
 			sonidos[1].play();
 			break;
-		case 'd':
+		case 2:
 			sonidos[2].play();
 			break;
-		case 'f':
+		case 3:
 			sonidos[3].play();
 			break;
-		case 'g':
+		case 4:
 			sonidos[4].play();
 			break;
-		case 'h':
+		case 5:
 			sonidos[5].play();
 			break;
+		case 6:
+			sonidos[6].play();
+			break;
+	}
+}
+
+function keyPressed() {
+	switch (key) {
 		case 'j':
+			sonidos[0].play();
+			break;
+		case 'i':
+			sonidos[1].play();
+			break;
+		case 'm':
+			sonidos[2].play();
+			break;
+		case 'y':
+			sonidos[3].play();
+			break;
+		case 'a':
+			sonidos[4].play();
+			break;
+		case 'l':
+			sonidos[5].play();
+			break;
+		case 'e':
 			sonidos[6].play();
 			break;
 	}
